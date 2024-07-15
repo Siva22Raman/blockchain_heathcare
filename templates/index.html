@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Blockchain</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Healthcare Blockchain</h1>
+        <form action="/records/new" method="post">
+            <input type="text" name="patient_id" placeholder="Patient ID" required>
+            <input type="text" name="patient_name" placeholder="Patient Name" required>
+            <input type="text" name="diagnosis" placeholder="Diagnosis" required>
+            <button type="submit">Add Record</button>
+        </form>
+        <a href="/chain">View Blockchain</a>
+    </div>
+</body>
+</html>

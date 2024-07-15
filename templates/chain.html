@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Chain</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Blockchain Chain</h1>
+        <ul>
+            {% for block in chain %}
+                <li>
+                    <h2>Block {{ block.index }}</h2>
+                    <p><strong>Timestamp:</strong> {{ block.timestamp }}</p>
+                    <p><strong>Previous Hash:</strong> {{ block.previous_hash }}</p>
+                    <p><strong>Proof:</strong> {{ block.proof }}</p>
+                    <p><strong>Records:</strong></p>
+                    <ul>
+                        {% for record in block.records %}
+                            <li>{{ record }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/">Add More Records</a>
+    </div>
+</body>
+</html>
